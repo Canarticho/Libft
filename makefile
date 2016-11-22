@@ -73,7 +73,9 @@ ft_strtrim\
 ft_tolower\
 ft_toupper
 
-SRC_DIR=norme
+SRC_DIR=src/
+
+INCLUDES_DIR=includes/
 
 NAME=TEST
 
