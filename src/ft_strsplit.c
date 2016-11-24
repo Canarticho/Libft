@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 01:21:36 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/24 05:17:33 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/24 06:06:35 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**ft_strsplit(const char *s, char c)
 	tab = tmp;
 	while (s[++i])
 	{
-		while (s[i] == c)
+		while (*s == c)
 			s++;
 		if (s[i] != c)
 		{

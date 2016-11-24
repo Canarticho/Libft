@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 00:02:58 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/17 00:53:32 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/24 07:42:56 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	int i;
 
 	i = -1;
-	end = ft_strlen(s1) + 1;
+	end = ft_strlen(s1);
 	while (s2[++i] && n--)
-		s1[end + i] = s2[i];
+		s1[end + i] = (char)s2[i];
+	s1[end + i] = '\0';
 	return (s1);
 }
