@@ -6,84 +6,93 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2016/11/22 04:43:33 by chle-van         ###   ########.fr        #
+#    Updated: 2016/11/23 04:28:56 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=gcc
+
 FLAGS=-Wall -Wextra -Werror
-SRC=ft_alnum\
-ft_atoi\
-ft_bzero\
-ft_countn\
-ft_isalpha\
-ft_isascii\
-ft_isdigit\
-ft_isprint\
-ft_itoa\
-ft_lstadd\
-ft_lstdel\
-ft_lstdelone\
-ft_lstiter\
-ft_lstmap\
-ft_lstnew\
-ft_memalloc\
-ft_memccpy\
-ft_memchr\
-ft_memcmp\
-ft_memcpy\
-ft_memdel\
-ft_memmove\
-ft_memset\
-ft_putchar\
-ft_putchar_fd\
-ft_putendl\
-ft_putendl_fd\
-ft_putnbr\
-ft_putnbr_fd\
-ft_putstr\
-ft_putstr_fd\
-ft_strcat\
-ft_strchr\
-ft_strclr\
-ft_strcmp\
-ft_strcpy\
-ft_strdel\
-ft_strdup\
-ft_strequ\
-ft_striter\
-ft_striteri\
-ft_strjoin\
-ft_strlcat\
-ft_strlen\
-ft_strmap\
-ft_strmapi\
-ft_strncat\
-ft_strncmp\
-ft_strncpy\
-ft_strndup\
-ft_strnequ\
-ft_strnew\
-ft_strnstr\
-ft_strrchr\
-ft_strsplit\
-ft_strstr\
-ft_strsub\
-ft_strtrim\
-ft_tolower\
-ft_toupper
+
+FILES=ft_atoi.c\
+ft_bzero.c\
+ft_countn.c\
+ft_isalnum.c\
+ft_isalpha.c\
+ft_isascii.c\
+ft_isdigit.c\
+ft_isprint.c\
+ft_itoa.c\
+ft_lstadd.c\
+ft_lstdel.c\
+ft_lstdelone.c\
+ft_lstiter.c\
+ft_lstmap.c\
+ft_lstnew.c\
+ft_memalloc.c\
+ft_memccpy.c\
+ft_memchr.c\
+ft_memcmp.c\
+ft_memcpy.c\
+ft_memdel.c\
+ft_memmove.c\
+ft_memset.c\
+ft_putchar.c\
+ft_putchar_fd.c\
+ft_putendl.c\
+ft_putendl_fd.c\
+ft_putnbr.c\
+ft_putnbr_fd.c\
+ft_putstr.c\
+ft_putstr_fd.c\
+ft_strcat.c\
+ft_strchr.c\
+ft_strclr.c\
+ft_strcmp.c\
+ft_strcpy.c\
+ft_strdel.c\
+ft_strdup.c\
+ft_strequ.c\
+ft_striter.c\
+ft_striteri.c\
+ft_strjoin.c\
+ft_strlcat.c\
+ft_strlen.c\
+ft_strmap.c\
+ft_strmapi.c\
+ft_strncat.c\
+ft_strncmp.c\
+ft_strncpy.c\
+ft_strndup.c\
+ft_strnequ.c\
+ft_strnew.c\
+ft_strnstr.c\
+ft_strrchr.c\
+ft_strsplit.c\
+ft_strstr.c\
+ft_strsub.c\
+ft_strtrim.c\
+ft_tolower.c\
+ft_toupper.c
+
+OBJ_NAME=$(FILES:.c=.o)
 
 SRC_DIR=src/
 
+SRC=$(addprefix $(SRC_DIR), $(FILES))
+
 INCLUDES_DIR=includes/
 
-NAME=TEST
+NAME=libft.a
 
-all:obj
-	$(CC) $(addsuffix .o, $(SRC)) -o $(NAME)
+all:$(NAME)
 
-obj:
-	$(CC) $(FLAGS) -c $(addsuffix .c, $(SRC))
+$(NAME):$(OBJ_NAME)
+	ar rc $@ $(OBJ_NAME)
+	ranlib $(NAME)
+
+$(OBJ_NAME)%.o: $(SRC)
+	$(CC) $(FLAGS) -c $^ -I $(INCLUDES_DIR)
 
 re:fclean all
 

@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 00:49:33 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/22 06:13:49 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/24 05:05:55 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
 	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
+	free(alst);
 	*alst = NULL;
 }

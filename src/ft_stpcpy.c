@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_alnum.c                                         :+:      :+:    :+:   */
+/*   ft_stpcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 04:19:39 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/17 01:16:36 by chle-van         ###   ########.fr       */
+/*   Created: 2016/11/15 23:20:26 by chle-van          #+#    #+#             */
+/*   Updated: 2016/11/23 08:27:41 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+char	*ft_stpcpy(char *dest, const char *src)
 {
-	if (ft_isdigit(c) || ft_isalpha(c))
-		return (c);
-	else
-		return (0);
+	int i;
+
+	i = -1;
+	while (src[++i])
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (&dest[i]);
 }

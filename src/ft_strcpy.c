@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 23:20:26 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/17 00:58:45 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/23 08:27:53 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ char	*ft_strcpy(char *dest, const char *src)
 	while (src[++i])
 		dest[i] = src[i];
 	dest[i] = '\0';
-	return (&dest[i]);
+	return (dest);
 }

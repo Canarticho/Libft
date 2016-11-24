@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 01:21:36 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/22 03:58:45 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/24 05:17:33 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	**ft_strsplit(const char *s, char c)
 	int		wn;
 
 	wn = ft_countn(s, c);
-	i = 0;
+	i = -1;
 	if (!(tmp = (char**)malloc(sizeof(char*) * wn + 1)))
 		return (NULL);
 	tab = tmp;
@@ -32,7 +32,7 @@ char	**ft_strsplit(const char *s, char c)
 		{
 			while (s[i] != c)
 				i++;
-			*tmp++ = ft_strndup(s, i);
+			*(tmp++) = ft_strndup(s, i);
 			s = s + i;
 			i = 0;
 		}

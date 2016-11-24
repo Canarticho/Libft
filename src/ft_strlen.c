@@ -6,11 +6,13 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 23:10:57 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/16 05:24:57 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/24 05:03:16 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int i;
 
