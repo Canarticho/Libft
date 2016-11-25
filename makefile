@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2016/11/23 04:28:56 by chle-van         ###   ########.fr        #
+#    Updated: 2016/11/25 05:34:51 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ ft_isalpha.c\
 ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
+ft_isspace.c\
 ft_itoa.c\
 ft_lstadd.c\
 ft_lstdel.c\
@@ -45,6 +46,7 @@ ft_putnbr.c\
 ft_putnbr_fd.c\
 ft_putstr.c\
 ft_putstr_fd.c\
+ft_stpcpy.c\
 ft_strcat.c\
 ft_strchr.c\
 ft_strclr.c\
@@ -57,6 +59,7 @@ ft_striter.c\
 ft_striteri.c\
 ft_strjoin.c\
 ft_strlcat.c\
+ft_strlcpy.c\
 ft_strlen.c\
 ft_strmap.c\
 ft_strmapi.c\
@@ -68,6 +71,7 @@ ft_strnequ.c\
 ft_strnew.c\
 ft_strnstr.c\
 ft_strrchr.c\
+ft_strrev.c\
 ft_strsplit.c\
 ft_strstr.c\
 ft_strsub.c\

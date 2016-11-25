@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 04:51:21 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/22 05:52:43 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/25 03:50:52 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_putstr(const char *c)
 {
-	while (*c)
-		ft_putchar(*(char *)c++);
+	ft_putstr_fd(c, 1);
 }

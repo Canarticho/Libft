@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 02:49:29 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/24 05:23:58 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/25 01:02:09 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnew(size_t size)
 	i = -1;
 	if (!(tmp = malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	while (size--)
+	while (size-- + 1)
 		tmp[++i] = '\0';
 	return (tmp);
 }

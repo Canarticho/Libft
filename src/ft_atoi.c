@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 03:04:47 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/24 05:04:00 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/25 02:07:18 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	ft_atoi(const char *str)
 	unsigned int	res;
 
 	res = 0;
-	while (*str == '\r' || *str == '\n' || *str == ' ' || *str == '\t'
-			|| *str == '\v' || *str == '\f')
+	pos = 1;
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '+' || *str == '-')
 		pos = (*(str++) == '-') ? (-1) : (1);

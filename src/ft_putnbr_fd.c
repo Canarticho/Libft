@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 03:17:50 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/22 05:57:41 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/25 05:48:52 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	ft_putnbr_fd(int c, int fd)
 {
-	char	*str;
+	char *s;
 
-	str = ft_itoa(c);
-	ft_putstr_fd(str, fd);
+	s = ft_itoa(c);
+	ft_putstr_fd(s, fd);
+	free(s);
 }

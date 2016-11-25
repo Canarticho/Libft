@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 02:55:04 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/22 22:48:07 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/25 03:52:14 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,28 @@
 
 char	*ft_itoa(int n)
 {
-	char	*str;
 	int		i;
+	char	str[11];
 	int		neg;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	neg = 0;
+	ft_bzero(str, 10);
 	i = 0;
-	str = ft_strnew(11);
 	if (n < 0)
-		neg = 1;
-	while (n)
 	{
-		str[9 - i++] = n % 10 + 'O';
+		n = -n;
+		neg = 1;
+	}
+	while (n / 10)
+	{
+		str[i++] = n % 10 + '0';
 		n = n / 10;
 	}
-	if (neg)
-		str[9 - i++] = '-';
-	str = str + (9 - i);
-	return (str);
+	str[i++] = n + '0';
+	if (neg == 1)
+		str[i++] = '-';
+	str[i] = '\0';
+	return (ft_strdup(ft_strrev(str)));
 }

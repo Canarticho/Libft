@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 04:38:17 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/24 05:40:53 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/25 06:54:55 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 char	*ft_strtrim(const char *s)
 {
-	int		size;
 	char	*str;
+	int		i;
+	int		j;
 
-	if (!(*s != ' ' && *s != '\n' && *s != '\t') && *s)
-		s++;
-	size = ft_strlen((char*)s) - 1;
-	while ((s[size] == ' ' || s[size] == '\n' || s[size] == '\t'))
-		size--;
-	if (!(str = ft_strnew(size + 1)))
+	i = 0;
+	if (!s)
 		return (NULL);
-	ft_strncpy(str, s, size + 1);
+	j = ft_strlen(s);
+	while (ft_isspace(s[i]) && s[i])
+		i++;
+	while ((ft_isspace(s[j - 1] && j > i)))
+		j--;
+	if (!(str = ft_strnew(j - i)))
+		return (NULL);
+	ft_strlcpy(str, &s[i], j - i);
 	return (str);
 }

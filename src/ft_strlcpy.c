@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 02:56:34 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/25 01:00:56 by chle-van         ###   ########.fr       */
+/*   Created: 2016/11/25 05:29:02 by chle-van          #+#    #+#             */
+/*   Updated: 2016/11/25 05:41:38 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	free(*as);
-	*as = NULL;
+	size_t i;
+
+	i = -1;
+	while (src[++i] && i < size - 1)
+		dst[i] = src[i];
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }

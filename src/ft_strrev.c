@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 02:56:34 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/25 01:00:56 by chle-van         ###   ########.fr       */
+/*   Created: 2016/11/25 03:12:24 by chle-van          #+#    #+#             */
+/*   Updated: 2016/11/25 03:49:03 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+char	*ft_strrev(char *s)
 {
-	free(*as);
-	*as = NULL;
+	int i;
+	int j;
+	int tmp;
+
+	i = 0;
+	j = ft_strlen(s) - 1;
+	while (i < j)
+	{
+		tmp = s[i];
+		s[i] = s[j];
+		s[j] = tmp;
+		i++;
+		j--;
+	}
+	return (s);
 }
