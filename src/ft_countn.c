@@ -25,7 +25,7 @@ int	ft_countn(const char *s, char c)
 			i++;
 		if (s[i] != c && (s[i]))
 		{
-			while (s[i] != c)
+			while (s[i] != c && s[i])
 				i++;
 			wn++;
 		}
