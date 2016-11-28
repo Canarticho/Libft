@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 03:11:00 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/25 01:06:57 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 11:34:20 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	int		i;
 	int		size;
 
+	if (!s || !f)
+		return (NULL);
 	size = ft_strlen((char *)s);
 	i = -1;
 	if (!(tmp = (char *)malloc(sizeof(char) * size + 1)))

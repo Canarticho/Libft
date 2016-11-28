@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 01:38:39 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/28 05:39:33 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 08:28:09 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	list = f(lst);
 	if (lst->next)
-		ft_lstadd(&(list->next), f(lst->next));
-	return (list);
+	{
+		ft_lstadd(&list, ft_lstmap((lst->next), f));
+		return (list);
+	}
+	else
+		return (NULL);
 }

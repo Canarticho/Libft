@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 03:06:32 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/25 03:32:38 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 11:32:43 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (*s)
 		(f)(i++, s++);

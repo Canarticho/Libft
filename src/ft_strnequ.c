@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 04:06:19 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/25 03:33:02 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 08:48:04 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strnequ(const char *s1, const char *s2, size_t n)
 		{
 			i++;
 		}
-		if (i == n || (!*s1 && !*s2))
+		if ((i == n || s1[i] == s2[i]))
 			return (1);
 	}
 	return (0);
