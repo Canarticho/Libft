@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 02:14:06 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/24 05:15:53 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 05:28:15 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_countn(const char *s, char c)
 
 	i = 0;
 	wn = 0;
-	while (*s)
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c)
+		if (s[i] != c && (s[i]))
 		{
 			while (s[i] != c)
 				i++;

@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 03:29:14 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/25 06:56:03 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 01:23:21 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putendl_fd(char const *s, int fd)
 {
 	write(fd, s, ft_strlen((char *)s));
-	write (fd, "\n", 1);
+	write(fd, "\n", 1);
 }

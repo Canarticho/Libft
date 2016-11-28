@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 01:21:36 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/24 06:06:35 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/28 05:48:09 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,24 @@ char	**ft_strsplit(const char *s, char c)
 	int		i;
 	char	**tab;
 	char	**tmp;
-	int		wn;
 
-	wn = ft_countn(s, c);
-	i = -1;
-	if (!(tmp = (char**)malloc(sizeof(char*) * wn + 1)))
+	if (!s)
+		return (NULL);
+	i = 0;
+	if (!(tmp = (char**)malloc(sizeof(char*) * (ft_countn(s, c)))))
 		return (NULL);
 	tab = tmp;
-	while (s[++i])
+	while (*s)
 	{
 		while (*s == c)
 			s++;
-		if (s[i] != c)
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		if (i)
 		{
-			while (s[i] != c)
-				i++;
-			*(tmp++) = ft_strndup(s, i);
+			*tmp = ft_strndup(s, i);
 			s = s + i;
+			tmp++;
 			i = 0;
 		}
 	}
