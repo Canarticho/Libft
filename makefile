@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2016/11/25 05:34:51 by chle-van         ###   ########.fr        #
+#    Updated: 2016/12/01 01:54:14 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC=gcc
 FLAGS=-Wall -Wextra -Werror
 
 FILES=ft_atoi.c\
+ft_atoi_base.c\
 ft_bzero.c\
 ft_countn.c\
 ft_isalnum.c\
@@ -47,6 +48,7 @@ ft_putnbr_fd.c\
 ft_putstr.c\
 ft_putstr_fd.c\
 ft_stpcpy.c\
+ft_sqrt.c\
 ft_strcat.c\
 ft_strchr.c\
 ft_strclr.c\

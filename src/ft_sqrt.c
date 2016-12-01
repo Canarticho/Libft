@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 05:29:02 by chle-van          #+#    #+#             */
-/*   Updated: 2016/12/01 00:12:42 by chle-van         ###   ########.fr       */
+/*   Created: 2016/12/01 01:44:39 by chle-van          #+#    #+#             */
+/*   Updated: 2016/12/01 01:54:42 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_sqrt(int nb)
 {
-	size_t i;
+	int i;
 
-	if (!dst && !src)
+	i = 1;
+	if (!nb)
 		return (0);
-	i = -1;
-	while (src[++i] && i < size - 1)
-		dst[i] = src[i];
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	while (!(i * i == nb) && i < 46345)
+		i++;
+	if (i * i == nb)
+		return (i);
+	else
+		return (0);
 }

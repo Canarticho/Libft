@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 03:17:50 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/28 10:09:30 by chle-van         ###   ########.fr       */
+/*   Updated: 2016/11/30 22:52:58 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 void	ft_putnbr(int c)
 {
 	if (c == -2147483648)
+	{
 		ft_putstr("-2147483648");
-	else if (c < 0)
+		return ;
+	}
+	if (c < 0)
 	{
 		c = -c;
 		ft_putchar('-');
 	}
-	else if (c >= 10)
+	if (c >= 10)
 	{
 		ft_putnbr(c / 10);
 		ft_putchar(c % 10 + '0');
