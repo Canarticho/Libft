@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoindel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/25 05:29:02 by chle-van          #+#    #+#             */
-/*   Updated: 2017/02/07 04:25:54 by chle-van         ###   ########.fr       */
+/*   Created: 2017/02/07 02:26:27 by chle-van          #+#    #+#             */
+/*   Updated: 2017/03/07 23:55:30 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strjoindel(char *s1, char *s2)
 {
-	size_t i;
+	char	*tmp;
+	int		size;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	while (src[i] && i < size)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	if (!s1 || !s2)
+		return (NULL);
+	size = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	if (!(tmp = (char *)malloc(sizeof(char) * size)))
+		return (NULL);
+	ft_strlcat(ft_strcpy(tmp, s1), s2, size);
+	free(s1);
+	free(s2);
+	return (tmp);
 }

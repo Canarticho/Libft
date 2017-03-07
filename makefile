@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2016/12/01 01:54:14 by chle-van         ###   ########.fr        #
+#    Updated: 2017/02/07 02:48:30 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ ft_strequ.c\
 ft_striter.c\
 ft_striteri.c\
 ft_strjoin.c\
+ft_strjoindel.c\
 ft_strlcat.c\
 ft_strlcpy.c\
 ft_strlen.c\
