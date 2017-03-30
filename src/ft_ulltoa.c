@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_ulltoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 02:49:29 by chle-van          #+#    #+#             */
-/*   Updated: 2017/02/12 06:03:31 by chle-van         ###   ########.fr       */
+/*   Created: 2017/03/30 08:24:40 by chle-van          #+#    #+#             */
+/*   Updated: 2017/03/30 11:29:39 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_ulltoa(uint64_t ll, char *buffer, int base)
 {
-	char	*tmp;
-	size_t	i;
+	int		i;
+	char	str[8 * 8+ 1];
+	int		tmp;
 
+	ft_bzero(str, 8 * 8 + 1);
 	i = 0;
-	if (!(tmp = malloc(sizeof(char) * size + 1)))
-		return (NULL);
-	while (i <= size)
-		tmp[i++] = '\0';
-	return (tmp);
+	while (ll / base)
+	{
+		str[i++] = ((tmp = ll % base) > 10) ? (tmp - 10 + 'a') : (tmp + '0');
+		ll = ll / base;
+	}
+	str[i++] = ((tmp = ll % base) > 10) ? (tmp - 10 + 'a') : (tmp + '0');
+	str[i] = '\0';
+	return (ft_strcpy(buffer, ft_strrev(str)));
 }

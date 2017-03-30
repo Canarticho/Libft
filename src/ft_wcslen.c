@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_wcslen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 02:49:29 by chle-van          #+#    #+#             */
-/*   Updated: 2017/02/12 06:03:31 by chle-van         ###   ########.fr       */
+/*   Created: 2017/03/30 13:28:51 by chle-van          #+#    #+#             */
+/*   Updated: 2017/03/30 13:46:06 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int ft_wcslen(wchar_t *wcs)
 {
-	char	*tmp;
-	size_t	i;
+	int i;
 
 	i = 0;
-	if (!(tmp = malloc(sizeof(char) * size + 1)))
-		return (NULL);
-	while (i <= size)
-		tmp[i++] = '\0';
-	return (tmp);
+	while (*wcs && wcs[i])
+		i++;
+	return (i);
+		
+
 }

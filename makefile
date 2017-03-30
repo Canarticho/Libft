@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2017/02/07 02:48:30 by chle-van         ###   ########.fr        #
+#    Updated: 2017/03/30 13:42:24 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ ft_lstdelone.c\
 ft_lstiter.c\
 ft_lstmap.c\
 ft_lstnew.c\
+ft_lltoa.c\
+ft_ulltoa.c\
 ft_memalloc.c\
 ft_memccpy.c\
 ft_memchr.c\
@@ -47,6 +49,8 @@ ft_putnbr.c\
 ft_putnbr_fd.c\
 ft_putstr.c\
 ft_putstr_fd.c\
+ft_putwchar.c\
+ft_putwcs.c\
 ft_stpcpy.c\
 ft_sqrt.c\
 ft_strcat.c\
@@ -80,7 +84,8 @@ ft_strstr.c\
 ft_strsub.c\
 ft_strtrim.c\
 ft_tolower.c\
-ft_toupper.c
+ft_toupper.c\
+ft_wcslen.c
 
 OBJ_NAME=$(FILES:.c=.o)
 

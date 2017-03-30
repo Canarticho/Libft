@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 04:33:51 by chle-van          #+#    #+#             */
-/*   Updated: 2016/12/01 01:53:52 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/03/30 13:45:26 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdlib.h>
-
+# include <stdint.h>
 typedef struct		s_list
 {
 	void			*content;
@@ -41,6 +41,8 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(const void *content, size_t content_size);
+char				*ft_lltoa(int64_t ll, char *buffer, int base);
+char				*ft_ulltoa(uint64_t ull, char *buffer, int base);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -57,6 +59,8 @@ void				ft_putnbr(int c);
 void				ft_putnbr_fd(int c, int fd);
 void				ft_putstr(const char *c);
 void				ft_putstr_fd(const char *s, int fd);
+void				ft_putwchar(wchar_t wc);
+void				ft_putwcs(wchar_t *wcs);
 char				*ft_stpcpy(char *dest, const char *src);
 int					ft_sqrt(int nb);
 char				*ft_strcat(char *s1, const char *s2);
@@ -90,5 +94,5 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strtrim(const char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-
+int					ft_wcslen(wchar_t *wcs);
 #endif
