@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwcs.c                                        :+:      :+:    :+:   */
+/*   ft_wcscpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/30 13:34:28 by chle-van          #+#    #+#             */
-/*   Updated: 2017/05/27 23:13:02 by chle-van         ###   ########.fr       */
+/*   Created: 2017/04/24 19:07:14 by chle-van          #+#    #+#             */
+/*   Updated: 2017/05/24 20:57:35 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putwcs(wchar_t *wcs)
+wchar_t	*ft_wcscpy(wchar_t *dst, const wchar_t *src)
 {
-	write(1, wcs, sizeof(wchar_t) * ft_wcslen(wcs));
+	while (*src)
+		*(dst++) = *(src++);
+	*dst = '\0';
+	return (dst);
 }

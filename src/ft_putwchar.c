@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 13:11:26 by chle-van          #+#    #+#             */
-/*   Updated: 2017/03/30 13:43:27 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/05/27 23:12:54 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putwchar(wchar_t wc)
 {
-	write (1, &wc, sizeof(wchar_t));
+	write(1, &wc, sizeof(wchar_t));
 }

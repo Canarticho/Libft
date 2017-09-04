@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/30 08:24:40 by chle-van          #+#    #+#             */
-/*   Updated: 2017/03/30 11:31:36 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/09/04 18:39:02 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 char	*ft_lltoa(int64_t ll, char *buffer, int base)
 {
 	int		i;
-	char	str[8 * 8 + 1];
+	char	str[8 * 8 + 2];
 	int		neg;
-	int		tmp;
+	int64_t	tmp;
 
 	neg = 0;
-	ft_bzero(str, 20);
+	ft_bzero(str, 8 * 8 + 2);
 	i = 0;
+	tmp = 0;
+	if (ll < 0)
+		ll = -ll;
 	while (ll / base)
 	{
-		str[i++] = ((tmp = ll % base) > 10) ? (tmp - 10 + 'a') : (tmp + '0');
+		tmp = (ll % base > 0) ? (ll % base) : (-ll % base);
+		str[i++] = (tmp >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
 		ll = ll / base;
-		if (ll < 0)
-		{
-			ll = -ll;
-			neg = 1;
-		}
 	}
-	str[i++] = ((tmp = ll % base) > 10) ? (tmp - 10 + 'a') : (tmp + '0');
+	if(neg)
+		neg = 1;
+	tmp = ll % base;
+	str[i++] = (ll % base >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
 	if (neg == 1)
 		str[i++] = '-';
 	str[i] = '\0';

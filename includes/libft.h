@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 04:33:51 by chle-van          #+#    #+#             */
-/*   Updated: 2017/03/30 13:45:26 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/09/04 17:35:14 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdint.h>
+#include <stdio.h>
+
 typedef struct		s_list
 {
 	void			*content;
@@ -26,7 +28,6 @@ typedef struct		s_list
 
 int					ft_isalnum(int c);
 int					ft_atoi(const char *str);
-int					ft_atoi_base(const char *str, int base);
 void				ft_bzero(void *s, size_t n);
 int					ft_countn(const char *s, char c);
 int					ft_isalpha(int c);
@@ -34,7 +35,7 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_isspace(int c);
-char				*ft_itoa(int n);
+char				*ft_itoa_base(int n, int base);
 void				ft_lstadd(t_list **alst, t_list *ne);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -42,7 +43,15 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstnew(const void *content, size_t content_size);
 char				*ft_lltoa(int64_t ll, char *buffer, int base);
+char				*ft_ltoa(int64_t l, char *buffer, int base);
+char				*ft_itoa(int32_t i, char *buffer, int base);
+char				*ft_stoa(int16_t s, char *buffer, int base);
+char				*ft_ctoa(char c, char *buffer, int base);
 char				*ft_ulltoa(uint64_t ull, char *buffer, int base);
+char				*ft_ultoa(uint64_t ul, char *buffer, int base);
+char				*ft_uitoa(uint32_t ui, char *buffer, int base);
+char				*ft_ustoa(uint16_t us, char *buffer, int base);
+char				*ft_uctoa(unsigned char c, char *buffer, int base);
 void				*ft_memalloc(size_t size);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -94,5 +103,15 @@ char				*ft_strsub(const char *s, unsigned int start, size_t len);
 char				*ft_strtrim(const char *s);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-int					ft_wcslen(wchar_t *wcs);
+wchar_t				*ft_wcscpy(wchar_t *dst, const wchar_t *src);
+size_t				ft_wcslen(wchar_t *wcs);
+wchar_t				*ft_wcsnew(size_t size);
+wchar_t				*ft_strtowcs(char *src);
+wchar_t				*ft_strtowcsd(char *src);
+wchar_t				*ft_wcschr(const wchar_t *wcs, wchar_t wc);
+wchar_t				*ft_wcsrev(wchar_t *s);
+void				ft_wcsset(void *str, int c, size_t size);
+size_t				ft_abs(int i);
+void				ft_wcsdel(wchar_t **as);
+void				ft_wcstoupper(wchar_t *wcs);
 #endif

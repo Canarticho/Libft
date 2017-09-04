@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2017/03/30 13:42:24 by chle-van         ###   ########.fr        #
+#    Updated: 2017/09/04 16:51:44 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,15 +24,22 @@ ft_isascii.c\
 ft_isdigit.c\
 ft_isprint.c\
 ft_isspace.c\
+ft_lltoa.c\
+ft_ltoa.c\
 ft_itoa.c\
+ft_stoa.c\
+ft_ctoa.c\
+ft_ulltoa.c\
+ft_ultoa.c\
+ft_uitoa.c\
+ft_ustoa.c\
+ft_uctoa.c\
 ft_lstadd.c\
 ft_lstdel.c\
 ft_lstdelone.c\
 ft_lstiter.c\
 ft_lstmap.c\
 ft_lstnew.c\
-ft_lltoa.c\
-ft_ulltoa.c\
 ft_memalloc.c\
 ft_memccpy.c\
 ft_memchr.c\
@@ -85,7 +92,17 @@ ft_strsub.c\
 ft_strtrim.c\
 ft_tolower.c\
 ft_toupper.c\
-ft_wcslen.c
+ft_wcscpy.c\
+ft_wcslen.c\
+ft_wcsnew.c\
+ft_strtowcs.c\
+ft_strtowcsd.c\
+ft_wcschr.c\
+ft_wcsrev.c\
+ft_wcsset.c\
+ft_abs.c\
+ft_wcsdel.c\
+ft_wcstoupper.c
 
 OBJ_NAME=$(FILES:.c=.o)
 
@@ -101,7 +118,6 @@ all:$(NAME)
 
 $(NAME):$(OBJ_NAME)
 	ar rc $@ $(OBJ_NAME)
-	ranlib $(NAME)
 
 $(OBJ_NAME)%.o: $(SRC)
 	$(CC) $(FLAGS) -c $^ -I $(INCLUDES_DIR)

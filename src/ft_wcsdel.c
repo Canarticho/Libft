@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwcs.c                                        :+:      :+:    :+:   */
+/*   ft_wcsdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/30 13:34:28 by chle-van          #+#    #+#             */
-/*   Updated: 2017/05/27 23:13:02 by chle-van         ###   ########.fr       */
+/*   Created: 2016/11/17 02:56:34 by chle-van          #+#    #+#             */
+/*   Updated: 2017/05/27 21:39:49 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putwcs(wchar_t *wcs)
+void	ft_wcsdel(wchar_t **as)
 {
-	write(1, wcs, sizeof(wchar_t) * ft_wcslen(wcs));
+	if (!as)
+		return ;
+	free(*as);
+	*as = NULL;
 }
