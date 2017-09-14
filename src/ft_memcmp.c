@@ -14,9 +14,6 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-
-	i = 0;
 	if (n < 3 && !(s1 || s2))
 		return (0);
 	while (n--)

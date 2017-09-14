@@ -24,7 +24,7 @@ char	*ft_ltoa(int64_t l, char *buffer, int base)
 	i = 0;
 	tmp = 0;
 	if (l < 0)
-		l = -l;
+		neg = 1;
 	while (l / base)
 	{
 		tmp = (l % base > 0) ? (l % base) : (-l % base);
@@ -32,7 +32,7 @@ char	*ft_ltoa(int64_t l, char *buffer, int base)
 		l = l / base;
 	}
 	if (neg)
-		neg = 1;
+		l = -l;
 	tmp = l % base;
 	str[i++] = (l % base >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
 	if (neg == 1)

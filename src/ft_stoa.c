@@ -24,7 +24,7 @@ char	*ft_stoa(int16_t s, char *buffer, int base)
 	i = 0;
 	tmp = 0;
 	if (s < 0)
-		s = -s;
+		neg = 1;
 	while (s / base)
 	{
 		tmp = (s % base > 0) ? (s % base) : (-s % base);
@@ -32,7 +32,7 @@ char	*ft_stoa(int16_t s, char *buffer, int base)
 		s = s / base;
 	}
 	if (neg)
-		neg = 1;
+		s = -s;
 	tmp = s % base;
 	str[i++] = (s % base >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
 	if (neg == 1)

@@ -32,7 +32,7 @@ char	*ft_lltoa(int64_t ll, char *buffer, int base)
 		ll = ll / base;
 	}
 	if(neg)
-		neg = 1;
+		ll = -ll;
 	tmp = ll % base;
 	str[i++] = (ll % base >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
 	if (neg == 1)
