@@ -24,7 +24,7 @@ char	*ft_lltoa(int64_t ll, char *buffer, int base)
 	i = 0;
 	tmp = 0;
 	if (ll < 0)
-		ll = -ll;
+		neg = 1;
 	while (ll / base)
 	{
 		tmp = (ll % base > 0) ? (ll % base) : (-ll % base);
