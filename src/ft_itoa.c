@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 02:55:04 by chle-van          #+#    #+#             */
-/*   Updated: 2017/09/04 18:38:04 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/09/15 15:46:46 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,21 @@ char	*ft_itoa(int32_t n, char *buffer, int base)
 {
 	int		i;
 	char	str[4 * 8 + 2];
-	int		neg;
 	int32_t	tmp;
 
 	tmp = 0;
-	neg = 0;
+
 	ft_bzero(str, 4 * 8 + 2);
 	i = 0;
-	if (n < 0)
-		neg = 1;
 	while (n / base)
 	{
-		tmp = (n % base > 0) ? (n % base) : (-n % base);
+		tmp = (n % base > 0) ? (n % base) : -(n % base);
 		str[i++] = (tmp >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
-		n = n / 10;
+		n = n / base;
 	}
-	if (neg)
-		n = -n;
-	tmp = n;
+	tmp = (n % base > 0) ? (n % base) : (-n % base);
 	str[i++] = (tmp >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
-	if (neg == 1)
+	if (n < 0)
 		str[i++] = '-';
 	str[i] = '\0';
 	return (ft_strcpy(buffer, ft_strrev(str)));
