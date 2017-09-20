@@ -20,7 +20,6 @@ char	*ft_ustoa(uint16_t s, char *buffer, int base)
 
 	ft_bzero(str, 2 * 8 + 2);
 	i = 0;
-	tmp = 0;
 	while (s / base)
 	{
 		tmp = s % base;
@@ -28,7 +27,7 @@ char	*ft_ustoa(uint16_t s, char *buffer, int base)
 		s = s / base;
 	}
 	tmp = s % base;
-	str[i++] = (s % base >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
+	str[i++] = (tmp % base >= 10) ? (tmp - 10 + 'a') : (tmp + '0');
 	str[i] = '\0';
 	return (ft_strcpy(buffer, ft_strrev(str)));
 }
