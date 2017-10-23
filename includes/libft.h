@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 04:33:51 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/20 12:19:43 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/23 12:36:56 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdio.h>
+# include "get_next_line.h"
 
 typedef struct		s_list
 {
