@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_wcsdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/15 23:10:57 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/17 03:59:34 by chle-van         ###   ########.fr       */
+/*   Created: 2017/10/20 11:59:22 by chle-van          #+#    #+#             */
+/*   Updated: 2017/10/20 12:17:20 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+wchar_t	*ft_wcsdup(wchar_t *src)
 {
-	size_t i;
+	wchar_t	*dst;
 
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
+	if (!(dst = ft_wcsnew(ft_wcslen(src))))
+		return (NULL);
+	ft_wcscpy(dst, src);
+	return (dst);
 }

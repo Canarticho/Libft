@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2017/09/04 16:51:44 by chle-van         ###   ########.fr        #
+#    Updated: 2017/10/23 12:23:10 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,10 +99,14 @@ ft_strtowcs.c\
 ft_strtowcsd.c\
 ft_wcschr.c\
 ft_wcsrev.c\
+ft_wcsdup.c\
+ft_wcsndup.c\
+ft_wcsncpy.c\
 ft_wcsset.c\
 ft_abs.c\
 ft_wcsdel.c\
-ft_wcstoupper.c
+ft_wcstoupper.c\
+ft_gnl.c
 
 OBJ_NAME=$(FILES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 04:33:51 by chle-van          #+#    #+#             */
-/*   Updated: 2017/09/04 17:35:14 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/20 12:19:43 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <stdint.h>
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct		s_list
 {
@@ -110,6 +110,9 @@ wchar_t				*ft_strtowcs(char *src);
 wchar_t				*ft_strtowcsd(char *src);
 wchar_t				*ft_wcschr(const wchar_t *wcs, wchar_t wc);
 wchar_t				*ft_wcsrev(wchar_t *s);
+wchar_t				*ft_wcsdup(wchar_t *s);
+wchar_t				*ft_wcsndup(wchar_t *s, size_t size);
+wchar_t				*ft_wcsncpy(wchar_t *dst, const wchar_t *src, size_t size);
 void				ft_wcsset(void *str, int c, size_t size);
 size_t				ft_abs(int i);
 void				ft_wcsdel(wchar_t **as);

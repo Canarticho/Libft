@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 02:55:04 by chle-van          #+#    #+#             */
-/*   Updated: 2017/09/15 15:46:46 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/18 21:01:48 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_itoa(int32_t n, char *buffer, int base)
 	int32_t	tmp;
 
 	tmp = 0;
-
 	ft_bzero(str, 4 * 8 + 2);
 	i = 0;
 	while (n / base)
