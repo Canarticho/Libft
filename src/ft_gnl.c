@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 09:30:40 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/23 12:22:28 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/23 12:41:35 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int		ft_gnl(const int fd, char **line)
 			if (tmp->siz <= 0)
 			{
 				tmp->fd = -1;
-				return (get_next_line(fd, line));
+				return (ft_gnl(fd, line));
 			}
 			return (ft_get_line(tmp, line));
 		}
