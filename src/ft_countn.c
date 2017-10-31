@@ -6,13 +6,13 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/19 02:14:06 by chle-van          #+#    #+#             */
-/*   Updated: 2016/11/30 23:20:06 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/31 21:19:44 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countn(const char *s, char c)
+int	ft_countwords(const char *s, char c)
 {
 	int wn;
 	int i;

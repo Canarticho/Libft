@@ -6,19 +6,19 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 09:42:40 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/23 12:33:57 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/28 20:27:26 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# define BUFF_SIZE 1
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "libft.h"
+# define BUFF_SIZE 4096
 
 typedef struct		s_buff
 {

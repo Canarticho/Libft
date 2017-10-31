@@ -6,7 +6,7 @@
 #    By: chle-van <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/16 01:43:30 by chle-van          #+#    #+#              #
-#    Updated: 2017/10/23 12:23:10 by chle-van         ###   ########.fr        #
+#    Updated: 2017/10/23 17:32:26 by chle-van         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +106,8 @@ ft_wcsset.c\
 ft_abs.c\
 ft_wcsdel.c\
 ft_wcstoupper.c\
-ft_gnl.c
+ft_gnl.c\
+ft_degtorad.c
 
 OBJ_NAME=$(FILES:.c=.o)
 

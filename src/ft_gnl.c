@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 09:30:40 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/23 12:41:35 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/28 20:46:12 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,46 +77,28 @@ int		ft_get_line(t_buff *buff, char **line)
 	return (buff->siz);
 }
 
-t_buff	*ft_addfd(t_buff *list, int fd, int task)
-{
-	t_buff	*new;
-
-	new = NULL;
-	if (task == 0)
-		;
-	new = (t_buff *)malloc(sizeof(*list));
-	new->buff = ft_strnew(1);
-	new->fd = fd;
-	new->siz = 1;
-	new->next = NULL;
-	if (!list)
-		return (new);
-	list->next = new;
-	return (new);
-}
-
 int		ft_gnl(const int fd, char **line)
 {
-	static t_buff	*list;
-	t_buff			*tmp;
+	static t_buff	*buff;
+	int				res;
 
 	if (fd < 0 || !line)
 		return (-1);
-	if (!list)
-		list = ft_addfd(list, fd, 0);
-	tmp = list;
-	while (tmp->next || tmp->fd == fd)
+	if (!buff)
 	{
-		if (fd == tmp->fd)
-		{
-			if (tmp->siz <= 0)
-			{
-				tmp->fd = -1;
-				return (ft_gnl(fd, line));
-			}
-			return (ft_get_line(tmp, line));
-		}
-		tmp = tmp->next;
+		buff = (t_buff *)malloc(sizeof(*buff));
+		buff->buff = ft_strnew(1);
+		buff->fd = fd;
+		buff->siz = 1;
+		buff->next = NULL;
 	}
-	return (ft_get_line(ft_addfd(tmp, fd, 0), line));
+	res = ft_get_line(buff, line);
+	if (buff->siz <= 0)
+	{
+		ft_strdel(&buff->buff);
+		free(buff);
+		buff = NULL;
+		return (0);
+	}
+	return (res);
 }

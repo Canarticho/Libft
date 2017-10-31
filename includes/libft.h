@@ -6,7 +6,7 @@
 /*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 04:33:51 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/23 12:36:56 by chle-van         ###   ########.fr       */
+/*   Updated: 2017/10/31 21:20:01 by chle-van         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdint.h>
 # include <stdio.h>
+# include <math.h>
 # include "get_next_line.h"
 
 typedef struct		s_list
@@ -30,7 +31,7 @@ typedef struct		s_list
 int					ft_isalnum(int c);
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s, size_t n);
-int					ft_countn(const char *s, char c);
+int					ft_countwords(const char *s, char c);
 int					ft_isalpha(int c);
 int					ft_isascii(int c);
 int					ft_isdigit(int c);
@@ -118,4 +119,5 @@ void				ft_wcsset(void *str, int c, size_t size);
 size_t				ft_abs(int i);
 void				ft_wcsdel(wchar_t **as);
 void				ft_wcstoupper(wchar_t *wcs);
+double				ft_degtorad(short angle);
 #endif
