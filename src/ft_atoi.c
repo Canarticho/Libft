@@ -1,32 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 03:04:47 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/23 14:53:16 by chle-van         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(const char *str)
 {
-	int				pos;
+	int		sign;
 	unsigned int	res;
 
 	res = 0;
-	pos = 1;
+	sign = 1;
 	while (ft_isspace(*str))
 		str++;
 	if (*str == '+' || *str == '-')
-		pos = (*(str++) == '-') ? (-1) : (1);
+		sign = (*(str++) == '-') ? (-1) : (1);
 	if (*str == '+' || *str == '-')
 		return (0);
 	while (ft_isdigit(*str))
 		res = res * 10 + (int)(*(str++)) - '0';
-	return (pos * res);
+	return (sign * res);
 }

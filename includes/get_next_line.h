@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   gnl.h                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chle-van <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/19 09:42:40 by chle-van          #+#    #+#             */
-/*   Updated: 2017/10/28 20:27:26 by chle-van         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include <stdlib.h>
@@ -22,11 +10,11 @@
 
 typedef struct		s_buff
 {
-	char			*buff;
-	int				fd;
-	int				siz;
+	char		*buff;
+	int		fd;
+	int		siz;
 	struct s_buff	*next;
-}					t_buff;
+}			t_buff;
 
 int					ft_gnl(const int fd, char **line);
 t_buff				*ft_addfd(t_buff *list, int fd, int task);
